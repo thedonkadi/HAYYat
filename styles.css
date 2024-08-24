@@ -170,48 +170,40 @@ video {
     background-color: #333;
 }
 
-/* FAQ Section */
-.faq {
+/* Read More News Section */
+.read-more-news {
     padding: 50px;
-    background-color: white;
     text-align: center;
-}
-
-.faq h2 {
-    margin-bottom: 20px;
-}
-
-.faq ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.faq li {
-    padding: 10px 0;
-    font-size: 1.2em;
-}
-
-/* Sign Up Section */
-.signup {
-    padding: 50px;
     background-color: #f4f4f4;
-    text-align: center;
+    position: relative;
 }
 
-.signup h2 {
+.read-more-news h2 {
     margin-bottom: 20px;
 }
 
-.signup button {
+/* White Line */
+.read-more-news .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+}
+
+/* Button Styling */
+.read-more-news button {
     padding: 15px 30px;
     border: none;
     background-color: black;
     color: white;
     font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.signup button:hover {
+.read-more-news button:hover {
     background-color: #333;
 }
 

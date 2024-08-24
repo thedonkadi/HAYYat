@@ -24,125 +24,94 @@ body, html {
 }
 
 /* Top Photo Section */
+/* Container for video and text */
 .top-photo-container {
     position: relative;
     width: 100%;
+    height: 100vh; /* Full height for the container */
+    overflow: hidden;
 }
 
-.top-photo {
+/* Style for the video */
+.top-video {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the video stays behind the text */
+}
+
+/* Style for the heading text */
+.top-heading {
+    position: absolute;
+    top: 20px; /* Adjust this value to move the text down */
+    left: 20px; /* Adjust this value to move the text right */
+    z-index: 2; /* Ensure the text stays on top of the video */
+    font-size: 4rem; /* Increase the size as needed */
+    color: white; /* Ensure the text is readable over the video */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow for better readability */
+}
+
+/* Optional: Add some pop-up or fade-in effect for the heading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .top-heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    text-align: center;
+    animation: fadeInUp 2s ease-in-out;
 }
 
 /* News Cards Section */
 .news-cards {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    padding: 50px 20px;
-    background-color: #f4f4f4;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 .card {
-    background: white;
+    background-color: #f4f4f4;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 30%;
-    margin: 10px;
-    text-align: center;
+    width: 45%;
+    margin-bottom: 20px;
 }
 
 .card h2 {
     margin-top: 0;
 }
 
-.card.positive {
-    border-left: 5px solid green;
+.card ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.card.negative {
-    border-left: 5px solid red;
+.card li {
+    margin-bottom: 10px;
 }
 
-.card.neutral {
-    border-left: 5px solid gray;
+.card a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.card a:hover {
+    text-decoration: underline;
 }
 
 /* Footer Section */
 footer {
     padding: 20px;
     background-color: black;
-    color: white;   
+    color: white;
     text-align: center;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-
-
-
-
-
-
-.news-cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.news-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.news-card:hover {
-    transform: scale(1.05);
-}
-
-.news-card-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.news-card-content {
-    padding: 15px;
-}
-
-.news-card-title {
-    font-size: 1.2em;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-.news-card-description {
-    font-size: 0.9em;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-.news-card-link {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
 }

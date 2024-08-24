@@ -1,46 +1,34 @@
-// Function to fetch and display news articles
-async function loadNews() {
-    try {
-        // Append a timestamp to the request to prevent caching
-        const response = await fetch('news_data.json?t=' + new Date().getTime());
-        const data = await response.json();
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch news data from the JSON file
+    fetch('news_data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Get the sports news data
+            const sportsNews = data.sports;
 
-        const department = 'Sports Department';
-        const newsSection = document.getElementById('news-cards');
-        newsSection.innerHTML = '';  // Clear any existing content
+            // Select the sections for positive and negative news
+            const positiveCard = document.querySelector('.positive-news ul');
+            const negativeCard = document.querySelector('.negative-news ul');
 
-        // Function to create a news card
-        function createNewsCard(news, cardClass) {
-            const card = document.createElement('div');
-            card.className = `card ${cardClass}`;
-            card.innerHTML = `
-                <h2>${news.newspaperName}</h2>
-                <p><strong>Date:</strong> ${news.date}</p>
-                <p><strong>Location:</strong> ${news.location}</p>
-                <p><a href="${news.newspaperLink}" target="_blank">${news.articleLink}</a></p>
-            `;
-            newsSection.appendChild(card);
-        }
+            // Function to populate news cards
+            function populateNewsCard(cardElement, newsArray) {
+                newsArray.forEach(news => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = news.url;
+                    link.target = '_blank';
+                    link.textContent = news.headline;
+                    listItem.appendChild(link);
+                    cardElement.appendChild(listItem);
+                });
+            }
 
-        // Display Positive News
-        if (data[department] && data[department].positive) {
-            data[department].positive.forEach(news => createNewsCard(news, 'positive'));
-        }
+            // Filter and populate the news based on sentiment
+            const positiveNews = sportsNews.filter(news => news.sentiment === 'positive');
+            const negativeNews = sportsNews.filter(news => news.sentiment === 'negative');
 
-        // Display Neutral News
-        if (data[department] && data[department].neutral) {
-            data[department].neutral.forEach(news => createNewsCard(news, 'neutral'));
-        }
-
-        // Display Negative News
-        if (data[department] && data[department].negative) {
-            data[department].negative.forEach(news => createNewsCard(news, 'negative'));
-        }
-
-    } catch (error) {
-        console.error('Error fetching the news data:', error);
-    }
-}
-
-// Load news when the page is ready
-document.addEventListener('DOMContentLoaded', loadNews);
+            populateNewsCard(positiveCard, positiveNews);
+            populateNewsCard(negativeCard, negativeNews);
+        })
+        .catch(error => console.error('Error fetching news:', error));
+});
