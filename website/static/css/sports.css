@@ -1,1 +1,96 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    z-index: 100;
+}
+
+.navbar .logo img {
+    height: 30px;
+    margin-right: 50px;
+}
+
+/* Top Photo Section */
+.top-photo-container {
+    position: relative;
+    width: 100%;
+}
+
+.top-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.top-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+/* News Cards Section */
+.news-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card.positive {
+    border-left: 5px solid green;
+}
+
+.card.negative {
+    border-left: 5px solid red;
+}
+
+.card.neutral {
+    border-left: 5px solid gray;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
 
