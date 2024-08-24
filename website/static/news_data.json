@@ -1,0 +1,53 @@
+{
+    "Sports Department": {
+        "dept": "Sports Department",
+        "positive": [
+            {
+                "newspaperLink": "https://www.example.com/news/sports/team-wins-championship",
+                "date": "2024-08-01",
+                "location": "New York",
+                "newspaperName": "Sports Daily",
+                "articleLink": "Read full article"
+            },
+            {
+                "newspaperLink": "https://www.example.com/news/sports/new-record-set",
+                "date": "2024-08-02",
+                "location": "Los",
+                "newspaperName": "Athlete Weekly",
+                "articleLink": "Read full article"
+            }
+        ],
+        "neutral": [
+            {
+                "newspaperLink": "https://www.example.com/news/sports/player-injury-updates",
+                "date": "2024-08-03",
+                "location": "Chicago",
+                "newspaperName": "Sporting News",
+                "articleLink": "Read full article"
+            },
+            {
+                "newspaperLink": "https://www.example.com/news/sports-upcoming-events",
+                "date": "2024-08-04",
+                "location": "Miami",
+                "newspaperName": "Sports Insider",
+                "articleLink": "Read full article"
+            }
+        ],
+        "negative": [
+            {
+                "newspaperLink": "https://www.example.com/news/sports-team-fined",
+                "date": "2024-08-05",
+                "location": "San Francisco",
+                "newspaperName": "Sports Journal",
+                "articleLink": "Read full article"
+            },
+            {
+                "newspaperLink": "https://www.example.com/news/sports-coach-leaves",
+                "date": "2024-08-06",
+                "location": "Seattle",
+                "newspaperName": "The Athletic",
+                "articleLink": "Read full article"
+            }
+        ]
+    }
+}
