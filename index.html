@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1 class="fade-popup" id="landingHeading">The Landing Page.</h1>
+            <div class="image-placeholder"></div>
+            <p>Go from design to site with Framer, the web builder for creative pros.</p>
+            <button>Get Started</button>
+        </header>
+
+        <!-- Logos Section -->
+        <div class="logos">
+            <span>Logo</span>
+            <span>Logo</span>
+            <span>Logo</span>
+            <span>Logo</span>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature">
+                <div class="image-placeholder"></div>
+                <h2>Fast</h2>
+                <p>You've never made a website this fast before.</p>
+                <button>Read More</button>
+            </div>
+            <div class="feature">
+                <div class="image-placeholder"></div>
+                <h2>Easy</h2>
+                <p>Works like the canvas tools you're familiar with.</p>
+                <button>Read More</button>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>FAQ</h2>
+            <ul>
+                <li>What is Framer?</li>
+                <li>Is it easy to use?</li>
+                <li>Do I need code?</li>
+            </ul>
+        </section>
+
+        <!-- Sign Up Section -->
+        <section class="signup">
+            <h2>Sign up today.</h2>
+            <button>Get Started</button>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>© Framer Inc. 2024</p>
+            <p>Instagram | Email</p>
+        </footer>
+    </div>
+
+    <script>
+        // Trigger the fade-in effect after a delay
+        window.addEventListener('load', function() {
+            const heading = document.getElementById('landingHeading');
+            heading.classList.add('fade-in');
+        });
+    </script>
+</body>
+</html>
